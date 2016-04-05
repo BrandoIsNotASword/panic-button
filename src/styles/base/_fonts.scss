@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+$light: 300;
+$normal: 400;
+$bold: 700;
+
+html {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 14px;
+  color: $black;
+
+  @media(min-width: 1024px) {
+    font-size: 16px;
+  }
+}

@@ -35,7 +35,7 @@ module.exports = {
           cacheDirectory: true
         }
       }, {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader?outputStyle=expanded'
       }, {
         test: /\.(png|jpg|woff|woff2)$/,

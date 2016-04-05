@@ -1,11 +1,13 @@
 import Baobab from 'baobab';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-export default new Baobab({
-  text: 'React is up and running!',
-  doge: {
-    bark: 'Wow!'
-  }
-}, {
+const tree = {
+};
+
+export { tree as initialTree };
+export default new Baobab(tree, {
   shiftReferences: true,
-  autoCommit: true
+  autoCommit: true,
+  pure: true,
+  mixins: [PureRenderMixin]
 });

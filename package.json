@@ -41,8 +41,13 @@
     "baobab": "^2.1.1",
     "baobab-react": "^1.0.0",
     "classnames": "^2.2.1",
+    "history": "^2.0.1",
+    "leaflet": "^0.7.7",
+    "leaflet-routing-machine": "^2.6.2",
     "react": "^0.14.2",
+    "react-addons-pure-render-mixin": "^0.14.8",
     "react-dom": "^0.14.2",
+    "react-router": "^2.0.1",
     "superagent": "^1.4.0",
     "superagent-jsonp": "0.0.6"
   }

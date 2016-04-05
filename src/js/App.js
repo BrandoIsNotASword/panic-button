@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import tree from './tree';
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
+import { createHashHistory } from 'history';
 import { root } from 'baobab-react/higher-order';
-const { Component } = React;
+import tree from './tree';
 
-import ChildComponent from './components/ChildComponent';
+import Main from './views/Main';
+import Login from './views/Login';
+import Home from './views/Home';
+
+const { Component } = React;
+const history = useRouterHistory(createHashHistory)({ queryKey: false });
 
 /* eslint-disable */
 import styles from '../styles/main.scss';
@@ -12,13 +18,17 @@ import styles from '../styles/main.scss';
 
 class App extends Component {
   render() {
-    return <ChildComponent />;
+    return (
+      <Router history={history}>
+        <Route path="/" component={Main}>
+          <IndexRoute component={Login} />
+          <Route path="/home" component={Home} />
+        </Route>
+      </Router>
+    );
   }
 }
 
 const RootedApp = root(App, tree);
 
-ReactDOM.render(
-  <RootedApp />,
-  document.getElementById('app')
-);
+ReactDOM.render(<RootedApp />, document.getElementById('app'));
