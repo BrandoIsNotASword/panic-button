@@ -24,9 +24,13 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="Home">
-        <MapView waypoints={this.props.waypoints} />
+        <MapView
+          waypoints={this.props.waypoints}
+          actual={this.props.actual}
+        />
       </div>
     );
   }
