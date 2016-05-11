@@ -2,6 +2,10 @@ import Baobab from 'baobab';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 const tree = {
+  home: {
+  	waypoints: [],
+    actual: 0
+  }
 };
 
 export { tree as initialTree };

@@ -7,13 +7,10 @@ import marker from '../../imgs/marker-icon.png';
 import styles from '../../../node_modules/leaflet/dist/leaflet.css';
 /* eslint-enable */
 
-const { Component } = React;
-const DUMMYLATLNG = [
-  [51.50503625326346, -0.09002029895782471],
-  [51.504341723551676, -0.08987009525299072],
-  [51.50395772421477, -0.08924782276153564],
-  [51.503910976248456, -0.08858263492584229]
-];
+const { PropTypes, Component } = React;
+const propTypes = {
+  waypoints: PropTypes.array
+};
 
 class MapView extends Component {
   constructor(props) {
@@ -54,14 +51,11 @@ class MapView extends Component {
   }
 
   handleInterval() {
-    const latLng = [DUMMYLATLNG[this.state.aux][0], DUMMYLATLNG[this.state.aux][1]];
-    const waypoints = this.state.waypoints;
+    const latLng = [this.props.waypoints[this.state.aux][0], this.props.waypoints[this.state.aux][1]];
 
     this.map.panTo(latLng);
     this.marker.setLatLng(latLng);
     this.polyline.addLatLng(latLng);
-
-    waypoints.push(DUMMYLATLNG[this.state.aux]);
 
     this.setState({ aux: this.state.aux + 1 });
   }
@@ -70,5 +64,7 @@ class MapView extends Component {
     return <div id="MapView" />;
   }
 }
+
+MapView.propTypes = propTypes;
 
 export default MapView;
