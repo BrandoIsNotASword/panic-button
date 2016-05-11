@@ -41,9 +41,11 @@ class MapView extends Component {
     this.marker.addTo(this.map);
     this.polyline.addTo(this.map);
 
+    /* eslint-disable */
     this.map.on('click', (e) => {
       console.log(e);
     });
+    /* eslint-enable */
   }
 
   componentWillUnmount() {
@@ -51,7 +53,8 @@ class MapView extends Component {
   }
 
   handleInterval() {
-    const latLng = [this.props.waypoints[this.state.aux][0], this.props.waypoints[this.state.aux][1]];
+    const { waypoints } = this.props;
+    const latLng = [waypoints[this.state.aux][0], waypoints[this.state.aux][1]];
 
     this.map.panTo(latLng);
     this.marker.setLatLng(latLng);

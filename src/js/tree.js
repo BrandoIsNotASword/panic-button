@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 const tree = {
   home: {
-  	waypoints: [],
+    waypoints: [],
     actual: 0
   }
 };

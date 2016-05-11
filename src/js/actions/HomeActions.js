@@ -1,5 +1,7 @@
 import state from '../tree';
+/* eslint-disable */
 import request from 'superagent';
+/* eslint-enable */
 
 const cursor = state.select('home');
 
