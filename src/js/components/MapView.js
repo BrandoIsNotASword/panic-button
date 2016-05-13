@@ -9,7 +9,8 @@ import styles from '../../../node_modules/leaflet/dist/leaflet.css';
 
 const { PropTypes, Component } = React;
 const propTypes = {
-  waypoints: PropTypes.array
+  waypoints: PropTypes.array,
+  actual: PropTypes.number
 };
 
 class MapView extends Component {
@@ -21,11 +22,11 @@ class MapView extends Component {
 
   componentDidMount() {
     this.timer = setInterval(this.handleInterval.bind(this), 3000);
-    this.map = L.map('MapView').setView([51.50503625326346, -0.09002029895782471], 13);
-    this.marker = L.marker([51.50503625326346, -0.09002029895782471], {
+    this.map = L.map('MapView').setView([51.5050362, -0.0900202], 13);
+    this.marker = L.marker([51.5050362, -0.0900202], {
       icon: L.icon({
         iconUrl: marker,
-        iconAnchor: [12, 40]
+	iconAnchor: [12, 35]
       })
     });
 
@@ -55,6 +56,7 @@ class MapView extends Component {
   handleInterval() {
     const { waypoints } = this.props;
     const latLng = [waypoints[this.state.aux][0], waypoints[this.state.aux][1]];
+    // const latLng = [waypoints[this.props.actual][0], waypoints[this.props.actual][1]];
 
     this.map.panTo(latLng);
     this.marker.setLatLng(latLng);
