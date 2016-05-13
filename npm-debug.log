@@ -1,0 +1,55 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'remove',
+1 verbose cli   'leaflet-plugins',
+1 verbose cli   '--save' ]
+2 info using npm@3.3.12
+3 info using node@v0.12.7
+4 verbose node symlink /usr/bin/node
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly install normalizeTree
+9 silly loadCurrentTree Finishing
+10 silly loadIdealTree Starting
+11 silly install loadIdealTree
+12 silly cloneCurrentTree Starting
+13 silly install cloneCurrentTreeToIdealTree
+14 silly cloneCurrentTree Finishing
+15 silly loadShrinkwrap Starting
+16 silly install loadShrinkwrap
+17 silly loadShrinkwrap Finishing
+18 silly loadAllDepsIntoIdealTree Starting
+19 silly uninstall loadAllDepsIntoIdealtree
+20 verbose stack Error: Missing required argument #3
+20 verbose stack     at replaceModule (/usr/local/lib/node_modules/npm/lib/install/deps.js:427:3)
+20 verbose stack     at /usr/local/lib/node_modules/npm/lib/install/deps.js:236:7
+20 verbose stack     at Array.forEach (native)
+20 verbose stack     at exports.removeDeps (/usr/local/lib/node_modules/npm/lib/install/deps.js:232:8)
+20 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+20 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+20 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+20 verbose stack     at Uninstaller.loadAllDepsIntoIdealTree (/usr/local/lib/node_modules/npm/lib/uninstall.js:72:3)
+20 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+20 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+21 verbose cwd /home/luis/Documentos/brando/panic-button
+22 error Linux 3.16.0-4-amd64
+23 error argv "node" "/usr/local/bin/npm" "remove" "leaflet-plugins" "--save"
+24 error node v0.12.7
+25 error npm  v3.3.12
+26 error code EMISSINGARG
+27 error typeerror Error: Missing required argument #3
+27 error typeerror     at replaceModule (/usr/local/lib/node_modules/npm/lib/install/deps.js:427:3)
+27 error typeerror     at /usr/local/lib/node_modules/npm/lib/install/deps.js:236:7
+27 error typeerror     at Array.forEach (native)
+27 error typeerror     at exports.removeDeps (/usr/local/lib/node_modules/npm/lib/install/deps.js:232:8)
+27 error typeerror     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+27 error typeerror     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+27 error typeerror     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+27 error typeerror     at Uninstaller.loadAllDepsIntoIdealTree (/usr/local/lib/node_modules/npm/lib/uninstall.js:72:3)
+27 error typeerror     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+27 error typeerror     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+27 error typeerror This is an error with npm itself. Please report this error at:
+27 error typeerror     <http://github.com/npm/npm/issues>
+28 verbose exit [ 1, true ]

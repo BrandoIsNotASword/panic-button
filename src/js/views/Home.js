@@ -15,21 +15,19 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.actions.getWaypoints();
+    this.actions.getWaypoints(this.props.location.query);
     this.timer = setInterval(this.handleInterval.bind(this), 3000);
   }
 
   handleInterval() {
-    this.actions.getWaypoints();
+    this.actions.getWaypoints(this.props.location.query);
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="Home">
         <MapView
           waypoints={this.props.waypoints}
-          actual={this.props.actual}
         />
       </div>
     );
@@ -38,8 +36,7 @@ class Home extends Component {
 
 export default branch(Home, {
   cursors: {
-    waypoints: ['home', 'waypoints'],
-    actual: ['home', 'actual']
+    waypoints: ['home', 'waypoints']
   },
   actions: { ...HomeActions }
 });

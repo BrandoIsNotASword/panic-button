@@ -9,24 +9,20 @@ import styles from '../../../node_modules/leaflet/dist/leaflet.css';
 
 const { PropTypes, Component } = React;
 const propTypes = {
-  waypoints: PropTypes.array,
-  actual: PropTypes.number
+  waypoints: PropTypes.array
 };
 
 class MapView extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { waypoints: [], aux: 0 };
   }
 
   componentDidMount() {
-    this.timer = setInterval(this.handleInterval.bind(this), 3000);
     this.map = L.map('MapView').setView([51.5050362, -0.0900202], 13);
     this.marker = L.marker([51.5050362, -0.0900202], {
       icon: L.icon({
         iconUrl: marker,
-	iconAnchor: [12, 35]
+        iconAnchor: [13, 38]
       })
     });
 
@@ -49,20 +45,14 @@ class MapView extends Component {
     /* eslint-enable */
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.timer);
-  }
-
-  handleInterval() {
+  componentDidUpdate() {
     const { waypoints } = this.props;
-    const latLng = [waypoints[this.state.aux][0], waypoints[this.state.aux][1]];
-    // const latLng = [waypoints[this.props.actual][0], waypoints[this.props.actual][1]];
+    const waypointsLength = waypoints.length - 1;
+    const latLng = [waypoints[waypointsLength][0], waypoints[waypointsLength][1]];
 
     this.map.panTo(latLng);
     this.marker.setLatLng(latLng);
-    this.polyline.addLatLng(latLng);
-
-    this.setState({ aux: this.state.aux + 1 });
+    this.polyline.setLatLngs(waypoints);
   }
 
   render() {
