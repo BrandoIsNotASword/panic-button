@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import moment from 'moment';
 import { branch } from 'baobab-react/higher-order';
 
 import MapView from '../components/MapView';
@@ -46,6 +47,8 @@ class Home extends Component {
     });
 
     return sessions.map((session, key) => {
+      const time = this.props.data.filter((element) => element.pannic === session)[0].created_at;
+
       return (
         <li
           key={key}
@@ -54,7 +57,7 @@ class Home extends Component {
           })}
           onClick={this.handleClickSession.bind(this, session)}
         >
-          {session}
+          {moment(time, moment.ISO_8601).format('HH:mm')}
         </li>
       );
     });
