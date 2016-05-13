@@ -46,6 +46,8 @@ class MapView extends Component {
   }
 
   componentDidUpdate() {
+    if (!this.props.waypoints.length) return;
+
     const { waypoints } = this.props;
     const waypointsLength = waypoints.length - 1;
     const latLng = [waypoints[waypointsLength][0], waypoints[waypointsLength][1]];

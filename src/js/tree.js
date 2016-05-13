@@ -3,7 +3,10 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 const tree = {
   home: {
-    waypoints: []
+    data: [],
+    waypoints: [],
+    dropdown: false,
+    selectedSession: ''
   }
 };
 

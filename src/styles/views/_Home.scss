@@ -1,4 +1,56 @@
 .Home {
   width: 100%;
   height: 100%;
+  position: relative;
+
+  .Home__sessions {
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    opacity: 0.85;
+    margin: 1em;
+    font-weight: $bold;
+    text-align: center;
+    box-sizing: border-box;
+
+    .Home__dropdown {
+      border-radius: 100px;
+      padding: 1em;
+      background-color: $red;
+      color: $white;
+    }
+
+    .Home__dropdown:hover {
+      background-color: $red + 25;
+      cursor: pointer;
+    }
+
+    .Home__listSessions {
+      margin-top: 1em;
+      background-color: $white;
+      border-radius: 15px;
+      overflow-y: auto;
+      max-height: 420px;
+      display: none;
+    }
+
+    .Home__listSessions.Home__listSessions--open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .Home__listSessions .Home__session {
+      padding: 1em;
+      font-size: 0.9em;
+    }
+
+    .Home__listSessions .Home__session.Home__session--selected {
+      background-color: $white - 50;
+    }
+
+    .Home__listSessions .Home__session:hover {
+      background-color: $white - 50;
+      cursor: pointer;
+    }
+  }
 }
